@@ -1,0 +1,66 @@
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+    <div class="w3-bar w3-black w3-card">
+        <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large">Gtauto</a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large">ACCEUIL</a>
+        <a [routerLink]="['/vehicule']" class="w3-bar-item w3-button w3-padding-large w3-hide-small">VOITURE</a>
+        <a href="#tour" class="w3-bar-item w3-button w3-padding-large w3-hide-small">MOTO</a>
+        
+        <div class="w3-dropdown-hover w3-hide-small">
+            <button class="w3-padding-large w3-button" title="More">MARQUE <i class="fa fa-caret-down"></i></button>
+            <div class="w3-dropdown-content w3-bar-block w3-card-4 w3-row">
+                <div class="w3-col s4">
+                    <a href="#" class="w3-bar-item w3-button">Volkswagen</a>
+                    <a href="#" class="w3-bar-item w3-button">Bmw</a>
+                    <a href="#" class="w3-bar-item w3-button">Mercedes</a>
+                    <a href="#" class="w3-bar-item w3-button">Seat</a>
+                    <a href="#" class="w3-bar-item w3-button">Skoda</a>
+                    <a href="#" class="w3-bar-item w3-button">Audi</a>
+                </div>
+                
+                <div class="w3-col s4">
+                    <a href="#" class="w3-bar-item w3-button">Kia</a>
+                    <a href="#" class="w3-bar-item w3-button">Toyota</a>
+                    <a href="#" class="w3-bar-item w3-button">Citroën</a>
+                    <a href="#" class="w3-bar-item w3-button">Hyundai</a>
+                    <a href="#" class="w3-bar-item w3-button">Honda</a>
+                    <a href="#" class="w3-bar-item w3-button">SsangYong</a>
+                </div>
+                <div class="w3-col s4">
+                    
+                    <a href="#" class="w3-bar-item w3-button">Renault</a>
+                    <a href="#" class="w3-bar-item w3-button">Peugot</a>
+                    <a href="#" class="w3-bar-item w3-button">Fiat</a>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="w3-bar-item w3-center w3-padding-large w3-hide-small">
+            <form class="d-flex">
+                <input class="form-control me-3" type="search" placeholder="chercher" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">CHERCHER</button>
+            </form>
+        </div>
+        <a [routerLink]="['/inscrireutulisateur']" class="w3-bar-item w3-button w3-padding-large w3-hide-small">S'INSCRIRE</a>
+        <a [routerLink]="['/loginutulisateur']" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONNECTER</a>
+
+    </div>
+
+</div>
+
+<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+    <a href="#band" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">BAND</a>
+    <a href="#tour" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">TOUR</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MERCH</a>
+</div>
+
+
+
+
+<router-outlet></router-outlet>
+
+<p>voiture-layout works!</p>

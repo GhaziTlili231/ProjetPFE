@@ -1,0 +1,71 @@
+body {
+  background-image: url('src/assets/imgs/voiture.jpg');
+  background-size: cover; /* Redimensionner l'image pour couvrir tout le fond */
+  background-position: center; /* Centrer l'image */
+  background-repeat: no-repeat; /* Ne pas répéter l'image */
+  margin: 0; /* Supprimer les marges par défaut du body */
+  padding: 0; /* Supprimer les paddings par défaut du body */
+  height: 100vh; /* 100% de la hauteur de la vue */
+  display: flex; /* Utiliser un conteneur flexible */
+  justify-content: center; /* Centrer horizontalement */
+  align-items: center; /* Centrer verticalement */
+}
+
+.card {
+	width: 700px;
+	height: 600px;
+	border: none;
+	border-radius: 15px;
+}
+
+.adiv {
+	background: #04CB28;
+	border-radius: 50px;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+	font-size: 16px; /* Augmente la taille de la police */
+	height: 46px;
+}
+
+.chat {
+	border: none;
+	background: #E2FFE8;
+	font-size: 14px; /* Augmente la taille de la police */
+	border-radius: 20px;
+}
+
+.bg-white {
+	border: 1px solid #E7E7E9;
+	font-size: 14px; /* Augmente la taille de la police */
+	border-radius: 20px;
+}
+
+.myvideo img {
+	border-radius: 20px;
+}
+
+.dot {
+	font-weight: bold;
+}
+
+.form-control {
+	border-radius: 12px;
+	border: 1px solid #F0F0F0;
+	font-size: 12px; /* Augmente la taille de la police */
+}
+
+.form-control:focus {
+	box-shadow: none;
+}
+
+.form-control::placeholder {
+	font-size: 12px; /* Augmente la taille de la police */
+	color: #C4C4C4;
+}
+.large-textarea {
+  font-size: 16px; /* Augmente la taille de la police à 16 pixels */
+}
+
+.u{
+  margin-left: 450px;
+}

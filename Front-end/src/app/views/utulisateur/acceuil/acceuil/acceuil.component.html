@@ -1,0 +1,250 @@
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GtAuto</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  
+    
+  </head>
+  
+  <body class="home">
+      <!-- Fixed navbar -->
+      
+  
+      <!-- Header -->
+      <header id="head">
+          <div class="container">
+              <div class="row">
+                  <h1 class="lead">GTAUTO MEILLEUR SITE DES PIECES DE RECHANGES
+          </h1>
+                  <p><a  [routerLink]="['/vehicule']"  class="btn btn-action btn-lg" role="button">VOITURES</a></p>
+                  <p><a  [routerLink]="['/moto']"  class="btn btn-action btn-lg" role="button">MOTOS</a></p>
+              </div>
+          </div>
+      </header>
+      <!-- /Header -->
+  
+      <!-- Intro -->
+      <div class="container text-center">
+          <div class="container bg-dark text-white p-4">
+              <h2 class="text-center">Recherche plus facile</h2>
+              <div class="row">
+                  <div class="col-md-4">
+                      <div class="form-group">
+                          <div class="single-model-search">
+                              <h2>Marque</h2>
+                              <div class="model-select-icon">
+                                  <select class="form-control" [(ngModel)]="selectedMarque" (change)="updateModele()">
+                                      <option value="default">Marque</option>
+                                      <option *ngFor="let marque of marques" [value]="marque">{{ marque }}</option>
+                                  </select>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+            
+                  <div class="col-md-4">
+                      <div class="form-group">
+                          <div class="single-model-search">
+                              <h2>Modèle</h2>
+                              <div class="model-select-icon">
+                                  <select class="form-control" [(ngModel)]="selectedModele">
+                                      <option value="default">Modèle</option>
+                                      <option *ngFor="let modele of modeles" [value]="modele">{{ modele }}</option>
+                                  </select>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+            
+                  <div class="col-md-4">
+                      <div class="form-group">
+                          <div class="single-model-search">
+                              <h2>&nbsp;</h2>
+                              <div class="model-select-icon">
+                                  <!-- Utiliser [routerLink] pour construire l'URL en fonction de la marque -->
+                                  <button  class="btn btn-action btn-lg" (click)="rechercher()">
+            
+                                      RECHERCHER
+                                  </button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+      </div>
+      <!-- /Intro-->
+          
+      <!-- Highlights - jumbotron -->
+      <div class="jumbotron top-space">
+          <div class="container">
+              
+              <h3 class="text-center thin">LES AVANTAGES DE GTAUTO</h3>
+              
+              <div class="row">
+                  <div class="col-md-3 col-sm-6 highlight">
+                      <div class="h-caption"><h4><i class="fa fa-cogs fa-5"></i>SOLUTION</h4></div>
+                      <div class="h-body text-center">
+                          <p>Chez GTAUTO, nous proposons des solutions complètes pour trouver rapidement les pièces de rechange dont vous avez besoin pour votre voiture ou votre moto. Avec notre vaste sélection de pièces de qualité, vous pouvez être sûr de trouver la bonne pièce pour votre véhicule.</p>
+                      </div>
+                  </div>
+                  <div class="col-md-3 col-sm-6 highlight">
+                      <div class="h-caption"><h4><i class="fa fa-flash fa-5"></i>RAPIDE</h4></div>
+                      <div class="h-body text-center">
+                          <p> La rapidité est l'une de nos priorités chez GTAUTO. Nous comprenons l'importance de recevoir rapidement les pièces de rechange nécessaires pour votre véhicule, c'est pourquoi nous nous efforçons de livrer vos commandes dans les plus brefs délais, afin que vous puissiez reprendre la route en toute sécurité et rapidement.</p>
+                      </div>
+                  </div>
+                  <div class="col-md-3 col-sm-6 highlight">
+                      <div class="h-caption"><h4><i class="fa fa-heart fa-5"></i>SATISFACTION</h4></div>
+                      <div class="h-body text-center">
+                          <p> Votre satisfaction est notre objectif principal chez GTAUTO. Nous nous engageons à vous fournir un service client exceptionnel et des pièces de rechange de qualité supérieure pour garantir votre satisfaction à chaque achat. Nous sommes là pour vous aider à trouver les pièces dont vous avez besoin et à répondre à toutes vos questions.</p>
+                      </div>
+                  </div>
+                  <div class="col-md-3 col-sm-6 highlight">
+                      <div class="h-caption"><h4><i class="fa fa-smile-o fa-5"></i>AIDE</h4></div>
+                      <div class="h-body text-center">
+                          <p>Besoin d'aide pour trouver la bonne pièce pour votre véhicule ? Notre équipe d'experts est là pour vous aider. Que vous ayez des questions sur la compatibilité des pièces ou que vous ayez besoin de conseils pour l'installation, nous sommes là pour vous fournir l'aide dont vous avez besoin pour trouver les meilleures pièces de rechange pour votre voiture ou votre moto.</p>
+                      </div>
+                  </div>
+              </div> <!-- /row  -->
+          
+          </div>
+      </div>
+      <!-- /Highlights -->
+  
+      <!-- container -->
+      <div class="container">
+  
+          
+  <div class="slideshow-container">
+      <div class="mySlides fade">
+        <img src="assets/imgs/1.jpg" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <img src="assets/imgs/2.jpg" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <img src="assets/imgs/3.png.png" style="width:100%">
+      </div>
+    </div>
+  </div>	<!-- /container -->
+      
+      <!-- Social links. @TODO: replace by link/instructions in template -->
+      <section id="social">
+          <div class="container">
+              <div class="wrapper clearfix">
+                  <!-- AddThis Button BEGIN -->
+                  <div class="addthis_toolbox addthis_default_style">
+                  <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                  <a class="addthis_button_tweet"></a>
+                  <a class="addthis_button_linkedin_counter"></a>
+                  <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+                  </div>
+                  <!-- AddThis Button END -->
+              </div>
+          </div>
+      </section>
+      <!-- /social links -->
+  
+  
+      <div class="bg-dark text-white footer">
+  
+          <div class="container py-4">
+              <div class="row">
+                  <div class="col-md-4">
+                      <div class="footer-section about">
+                          <h2>À propos de nous</h2>
+                          <p>Meilleur site d'e-commerce de pièces de rechange qui fournit toutes les pièces nécessaires à votre voiture ou moto. Bienvenue</p>
+                      </div>
+                  </div>
+        
+                  <div class="col-md-4">
+                      <div class="footer-section contact">
+                          <h2>Contactez-nous</h2>
+                          <p>Email : Gtautoinfo.com</p>
+                          <p>Téléphone : +216 95 232 152 </p>
+                      </div>
+                  </div>
+        
+              <div class="col-md-4">
+                      <div class="footer-section links">
+                          <h2>Liens rapides</h2>
+                          <ul class="list-unstyled">
+                              <li><a [routerLink]="['/']">Accueil</a></li>
+                              <li><a  [routerLink]="['/vehicule']">Produits voitures</a></li>
+                              <li><a  [routerLink]="['/moto']">Produits motos</a></li>
+                              <li><a [routerLink]="['/chatbot']">Chatbot</a></li>
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="col-md-4"> <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3290.9188324826155!2d8.762408175242172!3d34.42881679775351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12f896c4844f9457%3A0xb65f638415a83f78!2sFacult%C3%A9%20des%20Sciences%20de%20Gafsa!5e0!3m2!1sfr!2stn!4v1708269839025!5m2!1sfr!2stn" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+              </div>
+          </div>
+        
+          <div class="text-center text-muted">
+              <p>&copy; 2024 Mon Site. Tous droits réservés.</p>
+          </div>
+        
+        </div>
+        
+          
+  
+  
+  
+  
+      <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+      <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+      <script src="assets/assets1/js/headroom.min.js"></script>
+      <script src="assets/assets1/js/jQuery.headroom.min.js"></script>
+      <script src="assets/assets1/js/template.js"></script>
+  
+  
+    
+  
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+    var slideIndex = 0;
+    showSlides();
+    
+    function showSlides() {
+      var slides = document.getElementsByClassName("mySlides");
+      for (var i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      slides[slideIndex-1].style.display = "block";  
+      setTimeout(showSlides, 5000); // Change image every 5 seconds
+    }
+    
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
+    }
+    
+    function showDivs(n) {
+      var slides = document.getElementsByClassName("mySlides");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (var i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      slides[slideIndex-1].style.display = "block";  
+    }
+    </script>
+        
+        
+    
+  </body>
+  
+  <router-outlet></router-outlet>

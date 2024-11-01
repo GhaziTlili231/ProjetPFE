@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des achats</title>
+    <!-- Ajoutez le lien vers le fichier CSS Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center;">Liste des achats</h1>
+        <button class="btn btn-primary" (click)="showNewAchatForm()">Ajouter un achat</button>
+        <table class="table table-bordered mt-3">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Adresse Mail</th>
+                    <th>Mot de Passe</th>
+                    <th>Marque</th>
+                    <th>Nombre</th>
+                    <th>Prix</th>
+                    <th>Pièce</th>
+                    <th>Image</th>
+                    <th>Ville</th>
+                    <th>Adresse</th>
+                    <th>Téléphone</th>
+                    <th>Paiement</th>
+                    <th>Date d'Achat</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let achat of achats">
+                    <td>{{ achat.id }}</td>
+                    <td>{{ achat.adresse_mail }}</td>
+                    <td>{{ achat.mot_de_passe }}</td>
+                    <td>{{ achat.marque }}</td>
+                    <td>{{ achat.nombre }}</td>
+                    <td>{{ achat.prix }}</td>
+                    <td>{{ achat.piece }}</td>
+                    <td>{{ achat.image }}</td>
+                    <td>{{ achat.ville }}</td>
+                    <td>{{ achat.adresse }}</td>
+                    <td>{{ achat.telephone }}</td>
+                    <td>{{ achat.paiement }}</td>
+                    <td>{{ achat.date_achat }}</td>
+                    <td>
+                        <button class="btn btn-primary" (click)="editAchat(achat)">Modifier</button>
+                        <button class="btn btn-danger" (click)="deleteAchat(achat.id)">Supprimer</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    
+        <!-- Formulaire d'ajout d'un nouvel achat -->
+        <div *ngIf="isNewAchat">
+            <h2>Ajouter un achat</h2>
+            <form (submit)="saveNewAchat()">
+        <label for="new-adresse-mail">Adresse Mail:</label>
+        <input type="text" id="new-adresse-mail" [(ngModel)]="nouvelAchat.adresse_mail" name="new-adresse-mail" class="form-control">
+
+        <label for="new-mot-de-passe">Mot de Passe:</label>
+        <input type="text" id="new-mot-de-passe" [(ngModel)]="nouvelAchat.mot_de_passe" name="new-mot-de-passe" class="form-control">
+
+        <label for="new-marque">Marque:</label>
+        <input type="text" id="new-marque" [(ngModel)]="nouvelAchat.marque" name="new-marque" class="form-control">
+
+        <label for="new-nombre">Nombre:</label>
+        <input type="number" id="new-nombre" [(ngModel)]="nouvelAchat.nombre" name="new-nombre" class="form-control">
+
+        <label for="new-prix">Prix:</label>
+        <input type="number" id="new-prix" [(ngModel)]="nouvelAchat.prix" name="new-prix" class="form-control">
+
+        <label for="new-piece">Pièce:</label>
+        <input type="text" id="new-piece" [(ngModel)]="nouvelAchat.piece" name="new-piece" class="form-control">
+
+        <label for="new-image">Image:</label>
+        <input type="text" id="new-image" [(ngModel)]="nouvelAchat.image" name="new-image" class="form-control">
+
+        <label for="new-ville">Ville:</label>
+        <input type="text" id="new-ville" [(ngModel)]="nouvelAchat.ville" name="new-ville" class="form-control">
+
+        <label for="new-adresse">Adresse:</label>
+        <input type="text" id="new-adresse" [(ngModel)]="nouvelAchat.adresse" name="new-adresse" class="form-control">
+
+        <label for="new-telephone">Téléphone:</label>
+        <input type="text" id="new-telephone" [(ngModel)]="nouvelAchat.telephone" name="new-telephone" class="form-control">
+        
+
+        <label for="new-date-achat">Date d'Achat:</label>
+        <input type="date" id="new-date-achat" [(ngModel)]="nouvelAchat.date_achat" name="new-date-achat" class="form-control">
+
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+        <button type="button" class="btn btn-secondary" (click)="cancelNewAchat()">Annuler</button>
+    </form>
+</div>
+<div *ngIf="achatAModifier">
+    <h2>Modifier l'achat</h2>
+    <form (submit)="saveAchat()">
+        <label for="edit-adresse-mail">Adresse Mail:</label>
+        <input type="text" id="edit-adresse-mail" [(ngModel)]="achatAModifier.adresse_mail" name="edit-adresse-mail" class="form-control">
+
+        <label for="edit-mot-de-passe">Mot de Passe:</label>
+        <input type="text" id="edit-mot-de-passe" [(ngModel)]="achatAModifier.mot_de_passe" name="edit-mot-de-passe" class="form-control">
+
+        <label for="edit-marque">Marque:</label>
+        <input type="text" id="edit-marque" [(ngModel)]="achatAModifier.marque" name="edit-marque" class="form-control">
+
+        <label for="edit-nombre">Nombre:</label>
+        <input type="number" id="edit-nombre" [(ngModel)]="achatAModifier.nombre" name="edit-nombre" class="form-control">
+
+        <label for="edit-prix">Prix:</label>
+        <input type="number" id="edit-prix" [(ngModel)]="achatAModifier.prix" name="edit-prix" class="form-control">
+
+        <label for="edit-piece">Pièce:</label>
+        <input type="text" id="edit-piece" [(ngModel)]="achatAModifier.piece" name="edit-piece" class="form-control">
+
+        <label for="edit-image">Image:</label>
+        <input type="text" id="edit-image" [(ngModel)]="achatAModifier.image" name="edit-image" class="form-control">
+
+        <label for="edit-ville">Ville:</label>
+        <input type="text" id="edit-ville" [(ngModel)]="achatAModifier.ville" name="edit-ville" class="form-control">
+
+        <label for="edit-adresse">Adresse:</label>
+        <input type="text" id="edit-adresse" [(ngModel)]="achatAModifier.adresse" name="edit-adresse" class="form-control">
+
+        <label for="edit-telephone">Téléphone:</label>
+        <input type="text" id="edit-telephone" [(ngModel)]="achatAModifier.telephone" name="edit-telephone" class="form-control">
+
+        <label for="edit-date-achat">Date d'Achat:</label>
+        <input type="date" id="edit-date-achat" [(ngModel)]="achatAModifier.date_achat" name="edit-date-achat" class="form-control">
+
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+        <button type="button" class="btn btn-secondary" (click)="cancelEdit()">Annuler</button>
+    </form>
+</div>
+    </div>
+       
+</body>
+</html>

@@ -1,0 +1,118 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GtAuto</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    
+</head>
+
+<body class="bg-white"> 
+    <div class="container ml-15 fs-1 titre text-center"> C-elysée </div>  
+    <div class="d-flex">
+        <div class="card" style="width: 18rem; margin-right: 10px;">
+            <img class="card-img-top" src="assets/imgs/fag6.avif" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Filtre d'air</h5>
+                <p class="card-text">Le filtre d'air de haute qualité ....</p>
+                <h6 class="card-title">30 DT</h6>
+                <a [routerLink]="routerLinks[0]" class="btn btn-dark container">Voir plus</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="assets/imgs/fhg6.jpeg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Filtre de huile</h5>
+                <p class="card-text">Le filtre à huile est un composant...</p>
+                <h6 class="card-title">35 DT</h6>
+                <a [routerLink]="routerLinks[1]" class="btn btn-dark container">Voir plus</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="assets/imgs/pg7.jfif" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Plaquettes freins</h5>
+                <p class="card-text">Les plaquettes de freins sont....</p>
+                <h6 class="card-title">250 DT</h6>
+                <a href [routerLink]="routerLinks[2]" class="btn btn-dark container">Voir plus</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top " src="assets/imgs/bougieg6.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Bougie</h5>
+                <p class="card-text">La bougie d'allumage est....</p>
+                <h6 class="card-title">45 DT</h6>
+                <a [routerLink]="routerLinks[3]" class="btn btn-dark container">Voir plus</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="assets/imgs/bg6.jfif" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Batterie</h5>
+                <p class="card-text">La batterie fournit l'énergie.....</p>
+                <h6 class="card-title">200 DT</h6>
+                <a [routerLink]="routerLinks[4]" class="btn btn-dark container">Voir plus</a>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex">
+        <div class="card" style="width: 18rem; margin-right: 10px;">
+            <img class="card-img-top" src="assets/imgs/pneug7.webp" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Pneu</h5>
+                <p class="card-text">Les pneus sont le seul....</p>
+                <h6 class="card-title">250 DT</h6>
+                <a [routerLink]="routerLinks[5]" class="btn btn-dark container">Voir plus</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-dark text-white footer">
+
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="footer-section about">
+                        <h2>À propos de nous</h2>
+                        <p>Meilleur site d'e-commerce de pièces de rechange qui fournit toutes les pièces nécessaires à votre voiture ou moto. Bienvenue</p>
+                    </div>
+                </div>
+      
+                <div class="col-md-4">
+                    <div class="footer-section contact">
+                        <h2>Contactez-nous</h2>
+                        <p>Email : Gtautoinfo.com</p>
+                        <p>Téléphone : +216 95 232 152 </p>
+                    </div>
+                </div>
+      
+            <div class="col-md-4">
+                    <div class="footer-section links">
+                        <h2>Liens rapides</h2>
+                        <ul class="list-unstyled">
+                            <li><a [routerLink]="['/client']">Accueil</a></li>
+                            <li><a  [routerLink]="['/client/vehicule']">Produits voitures</a></li>
+                            <li><a  [routerLink]="['/client/moto']">Produits motos</a></li>
+                            <li><a [routerLink]="['/client/chatbot']">Chatbot</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4"> <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3290.9188324826155!2d8.762408175242172!3d34.42881679775351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12f896c4844f9457%3A0xb65f638415a83f78!2sFacult%C3%A9%20des%20Sciences%20de%20Gafsa!5e0!3m2!1sfr!2stn!4v1708269839025!5m2!1sfr!2stn" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+            </div>
+        </div>
+      
+        <div class="text-center text-muted">
+            <p>&copy; 2024 Mon Site. Tous droits réservés.</p>
+        </div>
+      
+      </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <router-outlet></router-outlet>
+</body>
+

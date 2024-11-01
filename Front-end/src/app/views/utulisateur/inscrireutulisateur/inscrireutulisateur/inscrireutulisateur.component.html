@@ -1,0 +1,105 @@
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription avec Google</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+   
+
+</head>
+<body >
+
+    <div class="container w-50 mt-5">
+        <div class="container text-center mx-auto mt-5 text-white display-3">Inscription</div>
+        <form class="form-container" [formGroup]="registerForm" (ngSubmit)="submit()" onsubmit="return validateForm()">
+            <div class="mb-3">
+                <label for="prenom" class="form-label text-white">Prenom:</label>
+                <input type="text" class="form-control" id="prenom" aria-describedby="prenom" placeholder="Votre Prenom" formControlName="prenom">
+            </div>
+    
+            <div class="mb-3">
+                <label for="nom" class="form-label text-white">Nom:</label>
+                <input type="text" class="form-control" id="nom" aria-describedby="nom" placeholder="Votre Nom" formControlName="nom">
+            </div>
+            <div class="row g-3 form-group">
+                <div class="col-sm">
+                    <input type="date" class="form-control" id="date_de_naissance" placeholder="Date de naissance" aria-label="Date de naissance" formControlName="date_de_naissance">
+                </div>
+                <div class="col-sm">
+                    <div class="col-sm">
+                        <select class="form-select" id="Genre" formControlName="genre">
+                            <option value="" disabled selected>Genre</option>
+                            <option value="Masculin">Masculin</option>
+                            <option value="Féminin">Féminin</option>
+                        </select>
+                    </div>
+                </div>
+                
+            </div>
+    
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label text-white">Votre adresse mail:</label>
+                <input type="email" class="form-control" id="adresse_mail" aria-describedby="emailHelp" placeholder="Votre Adresse mail" formControlName="adresse_mail">
+            </div>
+    
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label text-white">Votre Mot de passe :</label>
+                <input type="password" class="form-control" id="mot_de_passe" placeholder="Votre Mot de passe" formControlName="mot_de_passe">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label text-white">Confirmer le mot de passe :</label>
+                <input type="password" class="form-control" id="motDePasse" placeholder="Votre Mot de passe" formControlName="motDePasse">
+            </div>
+    
+            <div class="form-group">
+                <div class="mb-3">
+                    <label for="ville" class="form-label text-white">Ville:</label>
+                    <select class="form-control" id="ville" name="ville" formControlName="ville">
+                        <option value="Gafsa">Gafsa</option>
+                        <option value="Beja">Beja</option>
+                        <option value="Ben Arous">Ben Arous</option>
+                        <option value="Bizerte">Bizerte</option>
+                        <option value="Ariana">Ariana</option>
+                        <option value="Jendouba">Jendouba</option>
+                        <option value="Kairouan">Kairouan</option>
+                        <option value="Kasserine">Kasserine</option>
+                        <option value="Kébili">Kébili</option>
+                        <option value="Le Kef">Le Kef</option>
+                        <option value="Mahdia">Mahdia</option>
+                        <option value="Manouba">Manouba</option>
+                        <option value="Médenine">Médenine</option>
+                        <option value="Monastir">Monastir</option>
+                        <option value="Nabeul">Nabeul</option>
+                        <option value="Sfax">Sfax</option>
+                        <option value="Sidi Bouzid">Sidi Bouzid</option>
+                        <option value="Siliana">Siliana</option>
+                        <option value="Sousse">Sousse</option> 
+                        <option value="Tataouine">Tataouine</option>
+                        <option value="Tozeur">Tozeur</option>
+                        <option value="Tunis">Tunis</option>
+                        <option value="Zaghouan">Zaghouan</option>
+                       
+                    </select>
+                </div>
+            </div>
+    
+    
+            <div class="row g-3 form-group">
+                <div class="col-sm">
+                    <input type="text" class="form-control" placeholder="Votre Adresse" aria-label="State" formControlName="adresse">
+                </div>
+                <div class="col-sm">
+                    <input type="text" class="form-control" placeholder="Zip" aria-label="Zip" formControlName="zip">
+                </div>
+            </div>
+    
+            <button type="submit" class="btn btn-outline-danger container" (click)="submit()" >connecter</button>
+            <button type="button" class="btn btn-outline-danger container" onclick="signInWithGoogle()">
+                <span class="bi bi-google"></span> Inscription avec Google
+            </button>
+    
+        </form>
+    </div>
+    
+</body>
+

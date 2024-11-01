@@ -1,0 +1,12 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+body {
+    background-image: url('src/assets/imgs/voiture.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 110vh; /* Pour occuper toute la hauteur de l'écran */
+    background-color: #f60606; /* Couleur de fond */
+    margin-bottom: 10px;
+}

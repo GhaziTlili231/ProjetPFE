@@ -1,0 +1,20 @@
+/* CSS personnalisé pour la barre de navigation */
+#accordionSidebar {
+    background-color: #007bff; /* Couleur de fond bleue */
+  }
+  
+  /* CSS pour les liens de la barre de navigation */
+  .navbar-nav .nav-item .nav-link {
+    color: #fff; /* Couleur du texte des liens */
+  }
+  
+  /* CSS pour les liens de la barre de navigation au survol */
+  .navbar-nav .nav-item .nav-link:hover {
+    color: #fff; /* Couleur du texte des liens au survol */
+  }
+  
+  /* CSS pour le texte du branding de la barre de navigation */
+  .sidebar-brand .sidebar-brand-text {
+    color: #fff; /* Couleur du texte du branding */
+  }
+  
